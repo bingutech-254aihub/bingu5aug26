@@ -1,16 +1,19 @@
+import { Navbar } from "@/components/navbar"
+import { Hero } from "@/components/hero"
+import { Solutions } from "@/components/solutions"
+import { Ecosystem } from "@/components/ecosystem"
+import { SiteFooter } from "@/components/site-footer"
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center sm:items-start sm:text-left">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Bingu Tech website redesign :: 5aug26
-          </h1>
-          <p className="max-w-md text-lg text-muted-foreground">
-            To get started, send a prompt or modify this page directly.
-          </p>
-        </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <Solutions />
+        <Ecosystem />
       </main>
+      <SiteFooter />
     </div>
-  );
+  )
 }
