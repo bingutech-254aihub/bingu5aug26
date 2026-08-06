@@ -35,7 +35,7 @@ export function Ecosystem() {
           >
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition-opacity group-hover:opacity-100 opacity-60"
+              className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition-opacity opacity-60 group-hover:opacity-100"
             />
             <div className="relative">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-secondary text-primary">
@@ -49,12 +49,16 @@ export function Ecosystem() {
         ))}
       </div>
 
-      {/* Legally compliant external community leadership callout */}
-      <div className="mt-8 rounded-xl border border-border bg-card/50 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          <span className="text-xs font-semibold tracking-[0.15em] text-muted-foreground uppercase">ECOSYSTEM LEADERSHIP</span>
-          <h4 className="text-base font-semibold text-foreground mt-1">AI Tinkerers — Mombasa Chapter</h4>
-          <p className="text-xs text-muted-foreground mt-1 max-w-2xl">
+      {/* Synchronized glowing Ecosystem Leadership Callout */}
+      <div className="group relative overflow-hidden mt-8 rounded-xl border border-border bg-card/50 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors hover:border-primary/40">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition-opacity opacity-60 group-hover:opacity-100"
+        />
+        <div className="relative">
+          <span className="text-xs font-semibold tracking-[0.15em] text-primary uppercase">ECOSYSTEM LEADERSHIP</span>
+          <h4 className="text-lg font-semibold text-foreground mt-1">AI Tinkerers — Mombasa Chapter</h4>
+          <p className="text-xs leading-relaxed text-muted-foreground mt-1 max-w-2xl">
             Bingu Tech Founder Muhammad Kasmani serves as the City Organizer for AI Tinkerers Mombasa — an independent, non-profit global technical network dedicated to code-only, live terminal executions with foundation models.
           </p>
         </div>
@@ -62,7 +66,7 @@ export function Ecosystem() {
           href="https://mombasa.aitinkerers.org"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline shrink-0"
+          className="relative inline-flex items-center gap-1.5 rounded-md border border-border bg-secondary px-4 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground shrink-0"
         >
           Visit Chapter Platform
           <ExternalLink className="h-3.5 w-3.5" />
