@@ -1,4 +1,8 @@
+"use client"
+
 import Image from "next/image"
+import { useState } from "react"
+import { AuditModal } from "@/components/audit-modal"
 
 const footerLinks = [
   { label: "Enterprise AI", href: "#solutions" },
@@ -7,52 +11,60 @@ const footerLinks = [
 ]
 
 export function SiteFooter() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <footer id="footer" className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
-          <div className="max-w-sm">
-            {/* Real Logo Image in Footer */}
-            <a href="#top" className="inline-block" aria-label="Bingu Tech Home">
-              <Image
-                src="/bingu-tech-logo.png"
-                alt="Bingu Tech Logo"
-                width={160}
-                height={40}
-                className="h-9 w-auto object-contain"
-              />
-            </a>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Bingu Tech ICT Consultancy &amp; Solution Providers. Sovereign AI Swarms, localized RAG pipelines, and edge compute engineered in Kenya since 1996.
-            </p>
-            <a
-              href="mailto:hello@bingutech.co.ke"
-              className="mt-6 inline-flex rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-[#ff1a00] hover:shadow-[0_0_20px_rgba(255,69,0,0.6)]"
-            >
-              Book Technical Audit
-            </a>
+    <>
+      <footer id="footer" className="border-t border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
+            <div className="max-w-sm">
+              {/* Real Logo Image in Footer */}
+              <a href="#top" className="inline-block" aria-label="Bingu Tech Home">
+                <Image
+                  src="/bingu-tech-logo.png"
+                  alt="Bingu Tech Logo"
+                  width={160}
+                  height={40}
+                  className="h-9 w-auto object-contain"
+                />
+              </a>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                Bingu Tech ICT Consultancy &amp; Solution Providers. Sovereign AI Swarms, localized RAG pipelines, and edge compute engineered in Kenya since 1996.
+              </p>
+              {/* Footer Button Opens Modal instead of raw mailto */}
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="mt-6 inline-flex rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-[#ff1a00] hover:shadow-[0_0_20px_rgba(255,69,0,0.6)]"
+              >
+                Book Technical Audit
+              </button>
+            </div>
+
+            <nav aria-label="Footer" className="flex flex-col gap-3">
+              <p className="text-xs font-medium tracking-[0.15em] text-muted-foreground uppercase">EXPLORE</p>
+              {footerLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-foreground transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
           </div>
 
-          <nav aria-label="Footer" className="flex flex-col gap-3">
-            <p className="text-xs font-medium tracking-[0.15em] text-muted-foreground uppercase">EXPLORE</p>
-            {footerLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm text-foreground transition-colors hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          <div className="mt-14 border-t border-border pt-6">
+            <p className="text-xs text-muted-foreground">
+              &copy; 2026 Bingu Tech. All Rights Reserved.
+            </p>
+          </div>
         </div>
+      </footer>
 
-        <div className="mt-14 border-t border-border pt-6">
-          <p className="text-xs text-muted-foreground">
-            &copy; 2026 Bingu Tech. All Rights Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+      <AuditModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   )
 }
