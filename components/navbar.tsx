@@ -21,8 +21,8 @@ export function Navbar() {
           <Image
             src="/bingu-tech-logo.png"
             alt="Bingu Tech logo"
-            width={22}
-            height={40}
+            width={52}
+            height={70}
             className="h-7 w-auto"
             priority
           />
