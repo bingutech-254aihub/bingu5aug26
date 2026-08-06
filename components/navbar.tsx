@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -16,19 +17,16 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        {/* Sovereign Brand Mark & Wordmark — Pure CSS/SVG (Never Breaks) */}
+        {/* Render Actual Logo Image from public/ directory */}
         <a href="#top" className="flex items-center gap-3 group" aria-label="Bingu Tech Home">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-semibold text-xl tracking-tighter shadow-[0_0_15px_rgba(255,69,0,0.4)] transition-transform group-hover:scale-105">
-            b
-          </div>
-          <div className="flex flex-col">
-            <span className="text-base font-bold tracking-[0.25em] text-foreground font-sans">
-              BINGU<span className="text-primary">TECH</span>
-            </span>
-            <span className="text-[9px] font-medium tracking-[0.15em] text-muted-foreground uppercase">
-              AI Consultancy &amp; Solutions
-            </span>
-          </div>
+          <Image
+            src="/bingu-tech-logo.png"
+            alt="Bingu Tech Logo"
+            width={180}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </a>
 
         {/* Desktop Navigation Links */}
@@ -44,7 +42,7 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA & Mobile Toggle */}
+        {/* CTA Button with Electric Orange Hover Glow */}
         <div className="flex items-center gap-3">
           <a
             href="mailto:hello@bingutech.co.ke"
