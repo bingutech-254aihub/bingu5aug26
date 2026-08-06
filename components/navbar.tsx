@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -17,30 +16,35 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        {/* Full Brand Logo with dark-mode CSS invert overlay */}
-        <a href="#top" className="flex items-center gap-3" aria-label="Bingu Tech Home">
-          <Image
-            src="/bingu tech LOGO.png"
-            alt="Bingu Tech Logo"
-            width={180}
-            height={48}
-            className="h-10 w-auto object-contain invert brightness-200"
-            priority
-          />
+        {/* Sovereign Brand Mark & Wordmark — Pure CSS/SVG (Never Breaks) */}
+        <a href="#top" className="flex items-center gap-3 group" aria-label="Bingu Tech Home">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-semibold text-xl tracking-tighter shadow-[0_0_15px_rgba(255,69,0,0.4)] transition-transform group-hover:scale-105">
+            b
+          </div>
+          <div className="flex flex-col">
+            <span className="text-base font-bold tracking-[0.25em] text-foreground font-sans">
+              BINGU<span className="text-primary">TECH</span>
+            </span>
+            <span className="text-[9px] font-medium tracking-[0.15em] text-muted-foreground uppercase">
+              AI Consultancy &amp; Solutions
+            </span>
+          </div>
         </a>
 
+        {/* Desktop Navigation Links */}
         <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
         </div>
 
+        {/* CTA & Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
             href="mailto:hello@bingutech.co.ke"
@@ -60,6 +64,7 @@ export function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Menu Dropdown */}
       {open && (
         <div className="border-t border-border bg-background/95 px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-4">
@@ -68,7 +73,7 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
