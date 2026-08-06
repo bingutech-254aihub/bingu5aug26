@@ -20,7 +20,7 @@ export function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
     const formData = new FormData(e.currentTarget)
     // Send submit payload to Web3Forms API
-    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY") // Optional: Get free key at web3forms.com
+    formData.append("access_key", "6d4e290d-504b-4da3-9d62-1c8700c0122f") // Optional: Get free key at web3forms.com
     formData.append("subject", "New Enterprise AI Audit Request — Bingu Tech")
 
     try {
