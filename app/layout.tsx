@@ -9,12 +9,14 @@ const exo = Exo({
   display: 'swap',
 })
 
-// Factually accurate metadata separating 1996 foundation from 2026 AI solutions
 export const metadata: Metadata = {
   title: "Bingu Tech — Enterprise AI Consultancy & Automation Provider",
   description:
     "Pioneering Kenyan ICT since 1996. Bingu Tech designs and deploys sovereign, self-hosted AI Swarms, localized RAG pipelines, and edge compute systems for SACCOs, SMEs, and enterprise operations.",
   generator: 'v0.app',
+  icons: {
+    icon: '/bingu-tech-logo.png', // Explicit favicon fallback
+  },
 }
 
 export const viewport: Viewport = {
@@ -22,7 +24,6 @@ export const viewport: Viewport = {
   themeColor: '#0a0a0c',
 }
 
-// GEO/AEO JSON-LD Schema for AI Crawlers (SearchGPT, Gemini, Perplexity)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
