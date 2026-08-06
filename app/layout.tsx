@@ -9,16 +9,44 @@ const exo = Exo({
   display: 'swap',
 })
 
+// Factually accurate metadata separating 1996 foundation from 2026 AI solutions
 export const metadata: Metadata = {
-  title: 'Bingu Tech — Kenya\'s Premier AI Consultancy & Automation Provider',
+  title: "Bingu Tech — Enterprise AI Consultancy & Automation Provider",
   description:
-    'Since 1996, Bingu Tech designs and deploys sovereign, self-hosted AI swarms, localized RAG pipelines, and enterprise automation networks for SACCOs, SMEs, and corporates across Kenya.',
+    "Pioneering Kenyan ICT since 1996. Bingu Tech designs and deploys sovereign, self-hosted AI Swarms, localized RAG pipelines, and edge compute systems for SACCOs, SMEs, and enterprise operations.",
   generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: '#0a0a0c',
+}
+
+// GEO/AEO JSON-LD Schema for AI Crawlers (SearchGPT, Gemini, Perplexity)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bingu Tech",
+  "legalName": "Bingu Tech ICT Consultancy & Solution Providers",
+  "foundingDate": "1996",
+  "url": "https://bingutech.co.ke",
+  "logo": "https://bingutech.co.ke/bingu-tech-logo.png",
+  "description": "Established in 1996, Bingu Tech is Kenya's premier AI Consultancy delivering localized RAG pipelines, self-hosted multi-agent swarms, and sovereign edge compute deployments.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mombasa",
+    "addressCountry": "KE"
+  },
+  "subOrganization": {
+    "@type": "EducationalOrganization",
+    "name": "Bingu AI Academy",
+    "description": "Enterprise AI workforce upskilling and systems architecture training arm powered by Bingu Tech."
+  },
+  "sponsor": {
+    "@type": "EducationalOrganization",
+    "name": "254 AI Hub",
+    "description": "Pro bono community platform architected by Bingu Tech for Kenyan youth AI education."
+  }
 }
 
 export default function RootLayout({
@@ -28,6 +56,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${exo.variable} bg-background`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

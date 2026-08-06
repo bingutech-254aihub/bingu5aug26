@@ -8,7 +8,6 @@ const links = [
   { label: "Enterprise AI", href: "#solutions" },
   { label: "Bingu AI Academy", href: "#ecosystem" },
   { label: "254 AI Hub", href: "#ecosystem" },
-  { label: "AI Tinkerers", href: "#ecosystem" },
   { label: "Contact", href: "#footer" },
 ]
 
@@ -16,18 +15,18 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2.5" aria-label="Bingu Tech home">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        {/* Full Brand Logo with dark-mode CSS invert overlay */}
+        <a href="#top" className="flex items-center gap-3" aria-label="Bingu Tech Home">
           <Image
-            src="/bingu-tech-logo.png"
-            alt="Bingu Tech logo"
-            width={22}
-            height={40}
-            className="h-7 w-auto"
+            src="/bingu tech LOGO.png"
+            alt="Bingu Tech Logo"
+            width={180}
+            height={48}
+            className="h-10 w-auto object-contain invert brightness-200"
             priority
           />
-          <span className="text-sm font-semibold tracking-[0.2em] text-foreground">BINGU TECH</span>
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -44,15 +43,15 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#footer"
-            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+            href="mailto:hello@bingutech.co.ke"
+            className="hidden rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:bg-[#ff1a00] hover:shadow-[0_0_20px_rgba(255,69,0,0.6)] sm:inline-flex"
           >
             Book Technical Audit
           </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded={open}
           >
@@ -75,9 +74,9 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#footer"
+              href="mailto:hello@bingutech.co.ke"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+              className="mt-2 inline-flex justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
             >
               Book Technical Audit
             </a>
