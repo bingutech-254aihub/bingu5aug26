@@ -1,0 +1,16 @@
+# Bingu Tech — Enterprise AI Consultancy & Automation Provider
+
+> Established in 1996, Bingu Tech is a Kenyan AI consultancy specializing in sovereign enterprise AI deployments, localized RAG architectures, and autonomous multi-agent swarms.
+
+## Core Commercial Solutions
+- **Autonomous Multi-Agent Swarms:** Self-hosted reasoning agents integrated into enterprise ERP networks.
+- **Sovereign RAG & Data Systems:** On-premise vector databases with 100% data sovereignty.
+- **Edge AI & Offline Compute:** Quantized open-weight model deployments (Llama/Mistral) for localized infrastructure.
+
+## Ecosystem & Sub-Brands
+- **Bingu AI Academy:** Specialized B2B/B2C workforce upskilling and agentic system training.
+- **254 AI Hub:** Pro-bono youth digital upskilling community initiative supported by Bingu Tech.
+
+## Contact
+- Website: https://www.bingutech.co.ke
+- Email: mail@bingutech.co.ke
